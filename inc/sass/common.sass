@@ -1,0 +1,51 @@
+@charset "utf-8"
+@import 'shortcut.sass'
+@import url('normalize.css')
+
++setting
+
+html, body
+	height: 100%
+.wrap
+	display: table
+	table-layout: fixed
+	border-collapse: collapse
+	width: 100%
+	height: 100%
+
+.header
+	display: table-row
+	.top
+		width: 100%
+		height: 40px
+
+.gnb
+	&:after
+		content: ''
+		clear: both
+		display: block
+	> h1
+		float: left
+	> ul
+		float: right
+		> li
+			display: inline-block
+			> ul
+				display: none
+			&:hover
+				> ul
+					display: block
+
+.main
+	display: table-row
+	width: 100%
+	> *
+		height: 100%
+		display: table-cell
+.lnb
+	background: #fafafa
+	width: 200px
+.contents
+	background: #000
+
+.footer

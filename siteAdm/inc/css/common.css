@@ -1,5 +1,7 @@
+@charset "UTF-8";
 /* @import url'normalize.css' */
-@import url("normalize.css");
+@import url("../../../inc/css/normalize.css");
+/* basic settings */
 * { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-text-size-adjust: none; -webkit-font-smoothing: antialiased; -moz-font-smoothing: antialiased; word-break: break-all; word-wrap: break-word; }
 
 a { text-decoration: none; color: inherit; font-size: inherit; font-family: inherit; line-height: inherit; text-align: inherit; }
@@ -12,7 +14,7 @@ ul, li, ol { list-style-type: none; }
 
 legend, caption, .caption { overflow: hidden; width: 1px; height: 1px; font-size: 1px; line-height: 1px; text-indent: -9999px; }
 
-input, select, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0; font-family: inherit; }
+input, select, textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border-radius: 0; font-family: inherit; font-size: inherit; background: #fff; border: 1px solid #cdcdcd; }
 
 select::-ms-expand { display: none; }
 
@@ -33,30 +35,10 @@ select::-ms-expand { display: none; }
 
 .txt_center { text-align: center; }
 
+* { font-family: '맑은고딕', '맑은 고딕', 'MalgunGothic', "Malgun Gothic", "돋움", "Dotum", sans-serif; }
+
+html { font-size: 100px; }
+
+body { font-size: 16px; }
+
 html, body { width: 100%; height: 100%; }
-
-.wrap { display: table; table-layout: fixed; border-collapse: collapse; width: 100%; height: 100%; }
-
-.header { display: table-row; }
-
-.header .top { width: 100%; height: 40px; }
-
-.gnb:after { content: ''; clear: both; display: block; }
-
-.gnb > h1 { float: left; }
-
-.gnb > ul { float: right; }
-
-.gnb > ul > li { display: inline-block; }
-
-.gnb > ul > li > ul { display: none; }
-
-.gnb > ul > li:hover > ul { display: block; }
-
-.main { display: table-row; width: 100%; }
-
-.main > * { height: 100%; display: table-cell; }
-
-.lnb { background: #fafafa; width: 200px; }
-
-.contents { background: #000; }

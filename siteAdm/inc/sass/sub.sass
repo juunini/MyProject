@@ -1,0 +1,172 @@
+@import '../../../inc/sass/shortcut.sass'
+@import url(contents.css)
+@import url(board.css)
+@import url(common.css)
+
+*
+	margin: 0
+	padding: 0
+#skipToContent, #returnToPageTop
+	display: none
+
+#wrap
+	+display-flex
+	+flex-wrap(wrap)
+	+align-content(flex-start)
+	height: 100%
+#header
+	+display-flex
+	+flex-wrap(wrap)
+	+justify-content(space-between)
+	+align-content(flex-start)
+	overflow: hidden
+	width: 100%
+	height: auto
+	background: #4f5765
+	h1
+		display: inline-block
+		font-size: .24rem
+		font-weight: 700
+		color: #01a6d5
+		padding: 0 .25rem
+.gnb
+	+display-flex
+	+align-items(flex-end)
+	padding: 0 .25rem .1rem
+	ul
+		+display-flex
+		+align-items(center)
+	li
+		font-size: .12rem
+		color: #fff
+		&:before
+			content: ''
+			display: inline-block
+			margin: 0 .1rem
+			width: 1px
+			height: .1rem
+			background: #eaeaea
+		&:first-child:before
+			content: none
+		&:last-child a
+			display: inline-block
+			width: .7rem
+			height: .26rem
+			line-height: .24rem
+			text-align: center
+			border: 1px solid #6d737f
+			background: #424854
+$left-width: 2rem
+.lnb
+	+flex(1 1 100%)
+	height: .7rem
+	padding-left: $left-width
+	background: #424854
+	> ul
+		+display-flex
+		> li
+			position: relative
+			margin-left: .8rem
+			padding: .1rem 0
+			font-size: .2rem
+			&:first-child
+				margin-left: 0
+			> a
+				color: #999
+				font-size: .2rem
+				font-weight: 700
+				&.current
+					color: #fff
+			> ul
+				visibility: hidden
+				position: absolute
+				bottom: -.27rem
+				padding: 0 .1rem
+				white-space: nowrap
+				background: #4f5765
+				> li
+					display: inline-block
+					padding: .05rem 0
+					color: #bbb
+					font-size: .12rem
+					&:before
+						content: ''
+						display: inline-block
+						width: 1px
+						height: .1rem
+						margin: 0 .1rem 0 .06rem
+						background: #bbb
+					&:first-child:before
+						content: none
+					a.current
+						color: #fff
+					&.last
+						display: none
+#container
+	+display-flex
+	min-height: 100%
+	min-height: calc(100% - 1.3rem)
+	margin-bottom: -2px
+#leftcolumn
+	+flex(none)
+	width: $left-width
+	background: #ecedee
+	h2.tit
+		height: .6rem
+		line-height: .6rem
+		text-indent: .2rem
+		font-size: .2rem
+		font-weight: 700
+		color: #fff
+		background: #424854
+.snb
+	> ul
+		> li
+			> a
+				display: block
+				height: .35rem
+				line-height: .35rem
+				font-size: .16rem
+				font-weight: 700
+				text-indent: .22rem
+				overflow: hidden
+				white-space: nowrap
+				text-overflow: ellipsis
+				&.current
+					color: #fff
+					background: #01a6d5
+			> ul
+				padding: .1rem 0 .1rem .22rem
+				> li
+					line-height: .26rem
+					font-size: .16rem
+					font-weight: 700
+					&:before
+						content: '· '
+					a.current
+						color: #01a6d5
+#rightcolumn
+	padding: .3rem
+.location
+	+display-flex
+	+flex-wrap(wrap)
+	+justify-content(space-between)
+	+align-items(flex-end)
+	margin-bottom: .2rem
+	padding-bottom: .2rem
+	border-bottom: 2px solid #e3e3e3
+	fieldset
+		+order(2)
+	p
+		font-size: .12rem
+		color: #999
+		word-spacing: .1rem
+		span
+			&:before
+				content: url(/siteAdm/inc/img/common/icon_home.png)
+				content: url(/siteAdm/inc/img/common/icon_home.svg)
+				display: inline-block
+				margin-right: .05rem
+	h2
+		+order(1)
+		font-size: .28rem

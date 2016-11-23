@@ -1,0 +1,80 @@
+@import '../../../inc/sass/shortcut.sass'
+
+#admin_wrap
+	+display-flex
+	+justify-content(center)
+	+flex-wrap(wrap)
+	+align-content(flex-start)
+	min-height: 100%
+	min-height: 100vh
+	padding-top: 10%
+	background: #ebebeb
+	> *
+		+flex(0 1 8rem)
+#sm_header
+	+flex(1 1 100%)
+	margin-bottom: .1rem
+	h1
+		max-width: 8rem
+		margin: auto
+		font-size: .22rem
+.sm_login
+	position: relative
+	max-width: 8rem
+	height: 2rem
+	background: #fbfbfb url(../img/common/login_visual.png) no-repeat 1.2rem center
+	background: #fbfbfb url(../img/common/login_visual.svg) no-repeat 1.2rem center
+	background-size: 1.37rem 1.14rem
+	padding: .42rem 1.2rem
+.login
+	float: right
+	ul
+		display: inline-block
+	li
+		+ li
+			margin-top: .04rem
+		label
+			display: none
+		input
+			width: 2.5rem
+			height: .38rem
+			padding: 0 .1rem
+			&:focus
+				width: 2.5rem
+		+placeholder('돋움', .14rem, #aaa)
+	.sm_btn
+		display: inline-block
+		width: 1.1rem
+		height: .8rem
+		text-align: center
+		line-height: .8rem
+		font-weight: 700
+		color: #fff
+		background: #008ed7
+		vertical-align: top
+.guide
+	position: absolute
+	left: 0
+	bottom: -.5rem
+	width: 8rem
+	text-align: center
+
+@media screen and (max-width:768px)
+	html
+		font-size: 87.5px
+	#admin_wrap
+		padding-top: 20%
+	.sm_login
+		height: auto
+		text-align: center
+		padding: 1.8rem .1rem .4rem
+		background-position: center .42rem
+	.login
+		float: none
+		li input
+			width: 1.8rem
+			&:focus
+				width: 1.8rem
+	.guide
+		width: auto
+		bottom: -1rem

@@ -44,6 +44,9 @@
 		appearance: none
 		border-radius: 0
 		font-family: inherit
+		font-size: inherit
+		background: #fff
+		border: 1px solid #cdcdcd
 	select::-ms-expand /*IE10, IE11 select 기본 외형 감추기*/
 	  display: none
 
@@ -65,6 +68,24 @@
 	.txt_center
 		text-align: center
 
+=placeholder($font-family, $font-size, $color)
+	input::-webkit-input-placeholder /* Chrome/Opera/Safari */
+		font-family: $font-family
+		font-size: $font-size
+		color: $color
+	input::-moz-placeholder /* Firefox 19+ */
+		font-family: $font-family
+		font-size: $font-size
+		color: $color
+	input:-ms-input-placeholder /* IE 10+ */
+		font-family: $font-family
+		font-size: $font-size
+		color: $color
+	input:-moz-placeholder /* Firefox 18- */
+		font-family: $font-family
+		font-size: $font-size
+		color: $color
+
 
 =transform($val)
 	-webkit-transform: $val
@@ -76,21 +97,63 @@
 	-ms-filter: alpha(opacity=($val * 100))
 	-moz-opacity: $val
 	-khtml-opacity: $val
+
+// flex에 관한 설정들
 =display-flex
 	display: -webkit-box
 	display: -moz-box
 	display: -ms-flexbox
 	display: -webkit-flex
 	display: flex
+	-js-display: flex
 =flex($values)
 	-webkit-box-flex: $values
 	-moz-box-flex:  $values
 	-webkit-flex:  $values
 	-ms-flex:  $values
 	flex:  $values
+	-js-flex: $values
 =order($val)
 	-webkit-box-ordinal-group: $val
 	-moz-box-ordinal-group: $val
 	-ms-flex-order: $val
 	-webkit-order: $val
 	order: $val
+	-js-order: $val
+=align-items($val)
+	-webkit-flex-align: $val
+	-moz-flex-align: $val
+	-ms-flex-align: $val
+	align-items: $val
+	-js-flex-align: $val
+=flex-direction($val)
+	-webkit-flex-direction: $val
+	-moz-flex-direction: $val
+	-ms-flex-direction: $val
+	flex-direction: $val
+	-js-flex-direction: $val
+=justify-content($val)
+	-webkit-justify-content: $val
+	-moz-justify-content: $val
+	justify-content: $val
+	-webkit-flex-pack: $val
+	-moz-flex-pack: $val
+	-ms-flex-pack: $val
+	-js-flex-pack: $val
+=align-content($val)
+	align-content: $val
+	-webkit-align-content: $val
+	-moz-align-content: $val
+	-ms-align-content: $val
+	-js-align-content: $val
+=flex-wrap($val)
+	flex-wrap: $val
+	-webkit-flex-wrap: $val
+	-moz-flex-wrap: $val
+	-ms-flex-wrap: $val
+	-js-flex-wrap: $val
+=align-self($val)
+	-webkit-align-self: $val
+	-moz-align-self: $val
+	-ms-align-self: $val
+	align-self: $val

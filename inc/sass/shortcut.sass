@@ -48,14 +48,14 @@
 		background: #fff
 		border: 1px solid #cdcdcd
 	select::-ms-expand /*IE10, IE11 select 기본 외형 감추기*/
-	  display: none
+		display: none
 
 	/* Global css */
 	.hidden
 		display: none
-	.fl
+	.fl, .left
 		float: left
-	.fr
+	.fr, .right
 		float: right
 	.f_none
 		float: none
@@ -86,6 +86,41 @@
 		font-size: $font-size
 		color: $color
 
+=input-file($width, $height, $line-height, $font-size, $border-color)
+	input[type='file']::-webkit-file-upload-button
+		visibility: hidden
+	input[type='file']::before
+		content: '첨부파일'
+		box-sizing: border-box
+		display: inline-block
+		width: $width
+		height: $height
+		line-height: $line-height
+		text-align: center
+		vertical-align: top
+		background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3)
+		border: 1px solid $border-color
+		outline: none
+		white-space: nowrap
+		-webkit-user-select: none
+		cursor: pointer
+		font-weight: 700
+		font-size: $font-size
+	input[type='file']:hover::before
+		border-color: black
+	input[type='file']:active::before
+		background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9)
+
+=line-clamp($line)
+	display: -webkit-box
+	-webkit-line-clamp: $line
+	-webkit-box-orient: vertical
+	text-overflow: -o-ellipsis-lastline
+
+=child-node-num($start, $end, $node)
+	@for $i from $start through $end
+		&:nth-child(1):nth-last-child(#{$i}), &:nth-child(1):nth-last-child(#{$i}) ~ #{$node}
+			width: (100% / $i)
 
 =transform($val)
 	-webkit-transform: $val
